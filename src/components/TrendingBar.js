@@ -1,16 +1,16 @@
 import React, {useState, useEffect} from 'react';
 import {ScrollView} from 'react-native';
-import API_URL from '../config';
 import Card from './Card';
+import RedSkull from 'redskulljs';
+
+const api = new RedSkull();
 
 const TrendingBar = props => {
   const [apiData, setApiData] = useState({});
   const [isLoading, setLoading] = useState(true);
 
   const fetchData = async () => {
-    const url = API_URL + 'trending';
-    const resp = await fetch(url);
-    const data = await resp.json();
+    const data = await api.trending();
     setApiData(data);
     setLoading(false);
   };
