@@ -59,6 +59,13 @@ const HomeScreen = props => {
     setActiveElement(data);
   };
 
+  const searchCallback = query => {
+    if (query.length === 0) {
+      return;
+    }
+    props.navigation.navigate('search', {query: query});
+  };
+
   return (
     <View style={styles.body}>
       <LinearGradient
@@ -75,7 +82,7 @@ const HomeScreen = props => {
                 }\t`
               : ''}
           </Text>
-          <SearchBar />
+          <SearchBar searchCallback={searchCallback} />
           <TrendingBar
             data={apiData}
             style={styles.trendingBar}

@@ -55,7 +55,7 @@ const SearchBar = props => {
   }, []);
 
   const onSubmit = e => {
-    console.log(e.nativeEvent.text);
+    props.searchCallback(e.nativeEvent.text);
   };
 
   return (
