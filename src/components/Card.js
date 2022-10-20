@@ -45,6 +45,7 @@ const Card = props => {
 
   return (
     <TouchableHighlight
+      hasTVPreferredFocus={props.defaultFocus}
       onFocus={onFocus}
       onPress={onPress}
       onBlur={onBlur}
