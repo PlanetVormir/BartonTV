@@ -36,7 +36,9 @@ const Card = props => {
   }, [props]);
 
   const onPress = useCallback(() => {
-    console.log(`${props.title} was pressed`);
+    props.activeCardPressCallback
+      ? props.activeCardPressCallback(props.data)
+      : null;
   }, [props]);
 
   const onBlur = useCallback(() => {

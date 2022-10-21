@@ -18,6 +18,7 @@ const ResultView = props => {
 
   const activeCardCallback = data => {
     setSelectedId(data.media_id);
+    props.activeCardCallback(data);
   };
 
   let i = 0;

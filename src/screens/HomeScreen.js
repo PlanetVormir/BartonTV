@@ -46,6 +46,10 @@ const HomeScreen = props => {
     setActiveElement(data);
   };
 
+  const activeCardPressCallback = data => {
+    props.navigation.navigate('content', {data: data});
+  };
+
   const searchCallback = query => {
     if (query.length === 0) {
       return;
@@ -70,6 +74,7 @@ const HomeScreen = props => {
         data={apiData}
         style={styles.trendingBar}
         activeCardCallback={activeCardCallback}
+        activeCardPressCallback={activeCardPressCallback}
       />
     </Background>
   );

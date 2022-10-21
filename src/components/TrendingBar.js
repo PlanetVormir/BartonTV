@@ -20,6 +20,7 @@ const TrendingBar = props => {
         <Card
           key={result.media_id}
           activeCardCallback={props.activeCardCallback}
+          activeCardPressCallback={props.activeCardPressCallback}
           data={result}
           defaultFocus={i === 0}
         />,

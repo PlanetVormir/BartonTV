@@ -30,12 +30,16 @@ const SearchScreen = props => {
     }
   });
 
+  const activeCardCallback = data => {
+    props.navigation.navigate('content', {data: data});
+  };
+
   return (
     <Background>
       <Text style={styles.heading}>
         Results for {`"${route.params.query}"`}
       </Text>
-      <SearchResults data={apiData} />
+      <SearchResults data={apiData} activeCardCallback={activeCardCallback} />
     </Background>
   );
 };

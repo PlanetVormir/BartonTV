@@ -36,7 +36,6 @@ const SearchCard = props => {
 
   const onPress = useCallback(() => {
     props.activeCardCallback(props.data);
-    console.log(`${props.data.title} was pressed`);
   }, [props]);
 
   const onBlur = useCallback(() => {
