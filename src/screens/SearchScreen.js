@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
-import SearchResults from './SearchResults';
+import SearchResults from '../components/SearchResults';
 import LinearGradient from 'react-native-linear-gradient';
 
 const styles = StyleSheet.create({

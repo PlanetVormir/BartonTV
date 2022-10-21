@@ -1,8 +1,8 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import HomeScreen from './components/HomeScreen';
-import SearchScreen from './components/SearchScreen';
+import HomeScreen from './screens/HomeScreen';
+import SearchScreen from './screens/SearchScreen';
 import RedSkull from 'redskulljs';
 
 const API = new RedSkull();

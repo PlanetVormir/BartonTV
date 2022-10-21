@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
-import SearchBar from './SearchBar';
-import TrendingBar from './TrendingBar';
+import SearchBar from '../components/SearchBar';
+import TrendingBar from '../components/TrendingBar';
 import LinearGradient from 'react-native-linear-gradient';
 
 const styles = StyleSheet.create({
@@ -77,7 +77,7 @@ const HomeScreen = props => {
           </Text>
           <Text style={styles.metadata}>
             {activeElement.title
-              ? `\t${String(activeElement.type).toUpperCase()} \t|\t ${
+              ? `${String(activeElement.type).toUpperCase()} \t|\t ${
                   activeElement.quality
                 }\t`
               : ''}
