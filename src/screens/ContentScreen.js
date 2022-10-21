@@ -3,6 +3,7 @@ import {StyleSheet, View} from 'react-native';
 import Background from '../components/Background';
 import SearchCard from '../components/SearchCard';
 import MovieDetails from '../components/MovieDetails';
+import SeriesDetails from '../components/SeriesDetails';
 
 const styles = StyleSheet.create({
   container: {
@@ -53,12 +54,20 @@ const ContentScreen = props => {
     <Background>
       <View style={styles.container}>
         <SearchCard data={contentData} />
-        {!isLoading && contentType === 'movie' ? (
-          <MovieDetails
-            data={apiData}
-            metadata={contentData}
-            playCallback={playCallback}
-          />
+        {!isLoading ? (
+          contentType === 'movie' ? (
+            <MovieDetails
+              data={apiData}
+              metadata={contentData}
+              playCallback={playCallback}
+            />
+          ) : (
+            <SeriesDetails
+              data={apiData}
+              metadata={contentData}
+              playCallback={playCallback}
+            />
+          )
         ) : null}
       </View>
     </Background>

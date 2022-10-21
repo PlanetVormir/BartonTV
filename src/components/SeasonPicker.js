@@ -16,18 +16,17 @@ const styles = StyleSheet.create({
   },
 });
 
-const ServerPicker = props => {
-  const renderServerCards = () => {
+const SeasonPicker = props => {
+  const renderSeasonCards = () => {
     let cards = [];
 
-    for (let server in props.data) {
+    for (let season of props.seasons) {
       cards.push(
         <PickerCard
-          key={server}
-          activeKey={server}
-          activeCardPressCallback={props.activeCardPressCallback}
+          key={season}
+          activeKey={season}
           activeCardCallback={props.activeCardCallback}
-          text={server}
+          text={`Season ${season}`}
         />,
       );
     }
@@ -36,12 +35,12 @@ const ServerPicker = props => {
 
   return (
     <View style={styles.body}>
-      <Text style={styles.heading}>Servers: </Text>
+      <Text style={styles.heading}>Seasons: </Text>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        {props.data && renderServerCards()}
+        {props.seasons && renderSeasonCards()}
       </ScrollView>
     </View>
   );
 };
 
-export default ServerPicker;
+export default SeasonPicker;
