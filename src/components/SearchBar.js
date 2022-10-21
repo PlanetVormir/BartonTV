@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
   },
   textBox: {
     minWidth: Dimensions.get('window').width * 0.7,
+    minHeight: Dimensions.get('window').width * 0.7 * 0.08,
     padding: 20,
     borderRadius: 8,
     borderColor: 'hsl(207,10%,25%)',
@@ -37,6 +38,7 @@ const styles = StyleSheet.create({
   textBoxFocus: {
     borderColor: 'lavender',
     borderWidth: 2,
+    color: 'white',
   },
 });
 
@@ -67,7 +69,7 @@ const SearchBar = props => {
         onSubmitEditing={onSubmit}
         style={[styles.textBox, hasFocus ? styles.textBoxFocus : null]}
         placeholder="Search"
-        placeholderTextColor="lightgray"
+        placeholderTextColor="#aaa"
       />
     </TouchableHighlight>
   );

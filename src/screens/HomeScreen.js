@@ -14,20 +14,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    padding: 40,
+    padding: '4%',
   },
   heading: {
     flex: 0,
     fontWeight: 'bold',
     fontSize: 35,
-    margin: 40,
+    margin: '2%',
     marginLeft: 0,
-    marginBottom: 20,
     color: 'white',
   },
   metadata: {
     color: 'slategray',
-    marginBottom: 20,
   },
   trendingBar: {
     height: 0,
