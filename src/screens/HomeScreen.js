@@ -1,21 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
+import Background from '../components/Background';
 import SearchBar from '../components/SearchBar';
 import TrendingBar from '../components/TrendingBar';
-import LinearGradient from 'react-native-linear-gradient';
 
 const styles = StyleSheet.create({
-  body: {
-    flex: 1,
-  },
-  background: {
-    flex: 1,
-  },
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    padding: '4%',
-  },
   heading: {
     flex: 0,
     fontWeight: 'bold',
@@ -65,30 +54,24 @@ const HomeScreen = props => {
   };
 
   return (
-    <View style={styles.body}>
-      <LinearGradient
-        style={styles.background}
-        colors={['rgba(17,26,33, 0.6)', 'rgb(17,26,33)']}>
-        <View style={styles.container}>
-          <Text style={styles.heading}>
-            {activeElement.title ? activeElement.title : 'Loading...'}
-          </Text>
-          <Text style={styles.metadata}>
-            {activeElement.title
-              ? `${String(activeElement.type).toUpperCase()} \t|\t ${
-                  activeElement.quality
-                }\t`
-              : ''}
-          </Text>
-          <SearchBar searchCallback={searchCallback} />
-          <TrendingBar
-            data={apiData}
-            style={styles.trendingBar}
-            activeCardCallback={activeCardCallback}
-          />
-        </View>
-      </LinearGradient>
-    </View>
+    <Background>
+      <Text style={styles.heading}>
+        {activeElement.title ? activeElement.title : 'Loading...'}
+      </Text>
+      <Text style={styles.metadata}>
+        {activeElement.title
+          ? `${String(activeElement.type).toUpperCase()} \t|\t ${
+              activeElement.quality
+            }\t`
+          : ''}
+      </Text>
+      <SearchBar searchCallback={searchCallback} />
+      <TrendingBar
+        data={apiData}
+        style={styles.trendingBar}
+        activeCardCallback={activeCardCallback}
+      />
+    </Background>
   );
 };
 
