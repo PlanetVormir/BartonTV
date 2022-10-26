@@ -26,7 +26,7 @@ const styleSheet = props =>
       borderColor: 'rgba(0,0,0,0)',
     },
     wrapperFocused: {
-      borderWidth: 6,
+      borderWidth: 4,
       borderRadius: 20,
     },
     image: {
