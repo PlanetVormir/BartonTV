@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {StyleSheet, View} from 'react-native';
 import Background from '../components/Background';
-import SearchCard from '../components/SearchCard';
+import Card from '../components/Card';
 import MovieDetails from '../components/MovieDetails';
 import SeriesDetails from '../components/SeriesDetails';
 
@@ -53,7 +53,7 @@ const ContentScreen = props => {
   return (
     <Background>
       <View style={styles.container}>
-        <SearchCard data={contentData} />
+        <Card data={contentData} vertical removeTouch />
         {!isLoading ? (
           contentType === 'movie' ? (
             <MovieDetails

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {FlatList, StyleSheet} from 'react-native';
-import SearchCard from './SearchCard';
+import Card from './Card';
 
 const styles = StyleSheet.create({
   body: {
@@ -16,18 +16,19 @@ const styles = StyleSheet.create({
 const ResultView = props => {
   const [selectedId, setSelectedId] = useState(null);
 
-  const activeCardCallback = data => {
+  const activeCardPressCallback = data => {
     setSelectedId(data.media_id);
     props.activeCardCallback(data);
   };
 
   let i = 0;
   const renderItem = ({item}) => (
-    <SearchCard
+    <Card
       key={item.media_id}
       data={item}
-      activeCardCallback={activeCardCallback}
+      activeCardPressCallback={activeCardPressCallback}
       defaultFocus={i === 0 ? (i++, true) : false}
+      vertical={true}
     />
   );
 

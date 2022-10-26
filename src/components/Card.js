@@ -3,38 +3,41 @@ import {
   Dimensions,
   TouchableOpacity,
   ImageBackground,
+  View,
   StyleSheet,
 } from 'react-native';
 
 import LinearGradient from 'react-native-linear-gradient';
 
-const styles = StyleSheet.create({
-  gradient: {
-    width: Dimensions.get('window').width * 0.28,
-    aspectRatio: 16 / 9,
-    margin: 25,
-    borderRadius: 20,
-  },
-  wrapper: {
-    flex: 1,
-    backgroundColor: '#2E303A',
-    overflow: 'hidden',
-    borderRadius: 18,
-    borderColor: 'rgba(0,0,0,0)',
-  },
-  wrapperFocused: {
-    borderWidth: 6,
-    borderRadius: 20,
-  },
-  image: {
-    width: '105%',
-    height: '105%',
-    backgroundColor: 'rgba(0,0,0,0)',
-  },
-});
+const styleSheet = props =>
+  StyleSheet.create({
+    gradient: {
+      width: props.vertical ? 'auto' : Dimensions.get('window').width * 0.28,
+      height: props.vertical ? Dimensions.get('window').width * 0.28 : 'auto',
+      aspectRatio: props.vertical ? 9 / 16 : 16 / 9,
+      margin: 25,
+      borderRadius: 20,
+    },
+    wrapper: {
+      flex: 1,
+      backgroundColor: '#2E303A',
+      overflow: 'hidden',
+      borderRadius: 18,
+      borderColor: 'rgba(0,0,0,0)',
+    },
+    wrapperFocused: {
+      borderWidth: 6,
+      borderRadius: 20,
+    },
+    image: {
+      width: '105%',
+      height: '105%',
+      backgroundColor: 'rgba(0,0,0,0)',
+    },
+  });
 
 const Card = props => {
-  styles.gradient.aspectRatio = props.vertical ? 9 / 16 : 16 / 9;
+  const styles = styleSheet(props);
 
   const [hasFocus, setFocus] = useState(false);
 
@@ -53,6 +56,8 @@ const Card = props => {
     setFocus(false);
   }, []);
 
+  const Container = props.removeTouch ? View : TouchableOpacity;
+
   return (
     <LinearGradient
       style={styles.gradient}
@@ -60,7 +65,7 @@ const Card = props => {
       end={{x: 0, y: 0}}
       locations={[0.12, 0.42, 0.84]}
       colors={['#d2a8ff', '#f778ba', '#ff7b72']}>
-      <TouchableOpacity
+      <Container
         style={[styles.wrapper, hasFocus ? styles.wrapperFocused : null]}
         hasTVPreferredFocus={props.defaultFocus}
         onFocus={onFocus}
@@ -71,7 +76,7 @@ const Card = props => {
           style={styles.image}
           source={{uri: props.data ? props.data.poster : null}}
         />
-      </TouchableOpacity>
+      </Container>
     </LinearGradient>
   );
 };
