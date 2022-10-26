@@ -1,0 +1,30 @@
+<svg id="Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000">
+    <defs>
+        <style>
+            .cls-1{fill:url(#radial-gradient);}.cls-2{fill:url(#linear-gradient);}.cls-3{fill:url(#linear-gradient-2);}
+        </style>
+        <radialGradient id="radial-gradient" cx="500" cy="500" r="500" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#161b22"/>
+            <stop offset="1" stop-color="#0d1117"/>
+        </radialGradient>
+        <linearGradient id="linear-gradient" x1="1068.14" y1="887.12" x2="-44.14" y2="136.88"
+                        gradientUnits="userSpaceOnUse">
+            <stop offset="0.12" stop-color="#d2a8ff"/>
+            <stop offset="0.43" stop-color="#f778ba"/>
+            <stop offset="0.85" stop-color="#ff7b72"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-2" x1="138.49" y1="791.93" x2="650.35" y2="280.07"
+                        gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#a2facf"/>
+            <stop offset="1" stop-color="#64acff"/>
+        </linearGradient>
+    </defs>
+    <g id="Base">
+        <rect class="cls-1" width="1000" height="1000" rx="60"/>
+        <path class="cls-2"
+              d="M952,42a30,30,0,0,1,30,30V952a30,30,0,0,1-30,30H72a30,30,0,0,1-30-30V72A30,30,0,0,1,72,42H952m0-30H72A60,60,0,0,0,12,72V952a60,60,0,0,0,60,60H952a60,60,0,0,0,60-60V72a60,60,0,0,0-60-60Z"
+              transform="translate(-12 -12)"/>
+    </g>
+    <polygon id="ArrowBase" class="cls-3"
+             points="182.56 236 606.28 236 817.44 536 606.28 836 182.56 836 348.16 536 182.56 236"/>
+</svg>
