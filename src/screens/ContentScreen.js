@@ -47,7 +47,7 @@ const ContentScreen = props => {
   });
 
   const playCallback = episodeID => {
-    console.log(episodeID, 'episodeID requesting to be played');
+    props.navigation.navigate('player', {episodeID: episodeID});
   };
 
   return (
