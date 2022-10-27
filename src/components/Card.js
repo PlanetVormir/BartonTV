@@ -18,16 +18,19 @@ const styleSheet = props =>
       margin: 25,
       borderRadius: 20,
     },
+    gradientFocused: {},
     wrapper: {
       flex: 1,
       backgroundColor: '#2E303A',
       overflow: 'hidden',
       borderRadius: 18,
       borderColor: 'rgba(0,0,0,0)',
+      shadowColor: '#d2a8ff',
     },
     wrapperFocused: {
       borderWidth: 4,
       borderRadius: 20,
+      elevation: 10,
     },
     image: {
       width: '105%',
@@ -60,7 +63,7 @@ const Card = props => {
 
   return (
     <LinearGradient
-      style={styles.gradient}
+      style={[styles.gradient, hasFocus ? styles.gradientFocused : null]}
       start={{x: 1, y: 1}}
       end={{x: 0, y: 0}}
       locations={[0.12, 0.42, 0.84]}

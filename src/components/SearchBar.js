@@ -39,6 +39,8 @@ const styles = StyleSheet.create({
     borderColor: '#FF7B72',
     borderWidth: 2,
     color: 'white',
+    shadowColor: '#FF7B72',
+    elevation: 15,
   },
 });
 
