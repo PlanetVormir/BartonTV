@@ -92,8 +92,8 @@ const ContentScreen = props => {
             ) : (
               <SeriesDetails
                 data={apiData}
-                metadata={contentData}
                 playCallback={playCallback}
+                navigation={props.navigation}
               />
             )
           ) : null}

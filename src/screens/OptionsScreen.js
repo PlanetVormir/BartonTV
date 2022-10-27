@@ -24,7 +24,7 @@ const OptionsScreen = props => {
 
   const pressCallback = activeKey => {
     props.navigation.goBack();
-    DeviceEventEmitter.emit('event.optionSelected', {option: activeKey});
+    DeviceEventEmitter.emit(route.params.selectEventName, {option: activeKey});
   };
 
   let i = 0;

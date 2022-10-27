@@ -23,6 +23,7 @@ const MovieDetails = props => {
   const serverCallback = () => {
     props.navigation.navigate('options', {
       data: Object.keys(props.data),
+      selectEventName: 'event.serverSelected',
     });
   };
 
