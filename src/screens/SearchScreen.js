@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
   heading: {
     fontSize: 30,
     fontWeight: 'bold',
+    color: 'white',
   },
 });
 
@@ -37,7 +38,7 @@ const SearchScreen = props => {
   return (
     <Background>
       <Text style={styles.heading}>
-        Results for {`"${route.params.query}"`}
+        {isLoading ? 'Loading...' : `Results for "${route.params.query}"`}
       </Text>
       <SearchResults data={apiData} activeCardCallback={activeCardCallback} />
     </Background>
