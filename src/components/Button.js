@@ -47,7 +47,9 @@ const Button = props => {
   }, []);
 
   const onPress = useCallback(() => {
-    props.pressCallback(props.pressValue);
+    props.pressCallback
+      ? props.pressCallback(props.pressValue ? props.pressValue : props.text)
+      : null;
   }, [props]);
 
   const onBlur = useCallback(() => {

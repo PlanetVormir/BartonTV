@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import Background from '../components/Background';
 import Card from '../components/Card';
 import MovieDetails from '../components/MovieDetails';
@@ -16,6 +16,25 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     backgroundColor: 'skyblue',
+  },
+  detailsContainer: {
+    flex: 1,
+    padding: '4%',
+  },
+  title: {
+    fontWeight: 'bold',
+    fontSize: 40,
+    color: 'white',
+  },
+  metadata: {
+    fontsize: 15,
+    color: 'lightgray',
+  },
+  loadingText: {
+    margin: '4%',
+    fontSize: 40,
+    fontWeight: 'bold',
+    color: 'white',
   },
 });
 
@@ -54,21 +73,31 @@ const ContentScreen = props => {
     <Background>
       <View style={styles.container}>
         <Card data={contentData} vertical removeTouch />
-        {!isLoading ? (
-          contentType === 'movie' ? (
-            <MovieDetails
-              data={apiData}
-              metadata={contentData}
-              playCallback={playCallback}
-            />
-          ) : (
-            <SeriesDetails
-              data={apiData}
-              metadata={contentData}
-              playCallback={playCallback}
-            />
-          )
-        ) : null}
+        <View style={styles.detailsContainer}>
+          <Text style={styles.title}>
+            {isLoading ? 'Loading...' : contentData.title}
+          </Text>
+          <Text style={styles.metadata}>
+            {isLoading
+              ? ''
+              : `Quality: ${contentData.quality} \t|\t Rating: ${contentData.rating}`}
+          </Text>
+          {!isLoading ? (
+            contentType === 'movie' ? (
+              <MovieDetails
+                data={apiData}
+                playCallback={playCallback}
+                navigation={props.navigation}
+              />
+            ) : (
+              <SeriesDetails
+                data={apiData}
+                metadata={contentData}
+                playCallback={playCallback}
+              />
+            )
+          ) : null}
+        </View>
       </View>
     </Background>
   );
