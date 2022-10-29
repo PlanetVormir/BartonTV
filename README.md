@@ -3,8 +3,11 @@
     <h1>BartonTV</h1>
 </div>
 
----
 
 > **Note** I have no experience with either react or react-native, so I'm assuming I'm about to make a lot of mistakes
 
-Android TV client for [RedSkull API](https://github.com/PlanetVormir/RedSkull) written in react native.
+Android TV client for [RedSkull API](https://github.com/PlanetVormir/RedSkull) written in react native.<br><br>
+
+## Screenshots
+
+![demo](https://user-images.githubusercontent.com/75830554/198812736-8af9cec8-58c1-4123-8597-10a0fd52aa1c.gif)
